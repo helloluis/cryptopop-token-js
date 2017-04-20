@@ -27,13 +27,21 @@ bot.onEvent = function(session, message) {
 }
 
 function onMessage(session, message) {
-  welcome(session)
+  var msg = message.body.toLowerCase();
+  if (msg=="more" || msg=="toon" || msg=="gimme") {
+    toon(session)
+  } else {
+    welcome(session)  
+  }
 }
 
 function onCommand(session, command) {
   switch (command.content.value) {
     case 'ping':
       pong(session)
+      break
+    case 'toon':
+      toon(session)
       break
     case 'count':
       count(session)
@@ -51,7 +59,37 @@ function onPayment(session) {
 // STATES
 
 function welcome(session) {
-  sendMessage(session, `Hello Token!`)
+  sendMessage(session, `Welcome to Cryptopop - Nerdy cartoons every day by @helloluis - Check out the gallery at https://cryptopop.net!`)
+}
+
+function toon(session) {
+  var toons = [ 
+    ["The Bitcoin Gingerbread Man","70_market_share.png"],
+    ["Antpool Announcement","Antpool.png"],
+    ["Meanwhile, at the Dept. of Awesome Innovation ...","Awesome_blockchain_innovation.png"],
+    ["Bitcoin Bulldogs"],["Bitcoin_bulldogs.png"],
+    ["Dora's Hard Fork Survival Guide","Doras_hard_fork_survival_guide.png"],
+    ["Dr. Strange and Wong","Dr._Strange_and_Wong.png"],
+    ["Pennywise's Scamcoins","Pennywise.png"],
+    ["Snowmen Fight","Snowmen_fight.png"],
+    ["Infinite Jihan and Gmax","Infinite_jihan_and_gmax.png"],
+    ["Satoshi's Final Message","Satoshis_final_message.png"],
+    ["Dogs Trading Crypto","Dogs_trading_with_dialogue.png"],
+    ["The Bitcoin Reddit Troll","The_reddit_troll.png"],
+    ["Madonna of the Bitcoin Miners","Madonna.png"],
+    ["A Weird Nightmare","The_Grady_Twins.png"]
+    
+  ]
+
+  var random_toon = toons[Math.floor(Math.random()*toons.length)];
+
+  session.reply(SOFA.Message({
+    body: random_toon[0],
+    attachments: [{
+      "type": "image",
+      "url": random_toon[1]
+    }]
+  }))
 }
 
 function pong(session) {
@@ -77,7 +115,7 @@ function donate(session) {
 function sendMessage(session, message) {
   let controls = [
     {type: 'button', label: 'Ping', value: 'ping'},
-    {type: 'button', label: 'Count', value: 'count'},
+    {type: 'button', label: 'Toon', value: 'toon'},
     {type: 'button', label: 'Donate', value: 'donate'}
   ]
   session.reply(SOFA.Message({
