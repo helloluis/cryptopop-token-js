@@ -77,8 +77,11 @@ function toon(session) {
     ["Dogs Trading Crypto","Dogs_trading_with_dialogue.png"],
     ["The Bitcoin Reddit Troll","The_reddit_troll.png"],
     ["Madonna of the Bitcoin Miners","Madonna.png"],
-    ["A Weird Nightmare","The_Grady_Twins.png"]
-    
+    ["A Weird Nightmare","The_Grady_Twins.png"],
+    ["An Uber Accident","An_Uber_Accident.png"],
+    ["Bear teaches Bull","Bear_teaching_bull.png"],
+    ["Memento","Memento.png"],
+    ["Tony and DUM-E","Tony_and_Dum-E.png"]
   ]
 
   var random_toon = toons[Math.floor(Math.random()*toons.length)];
