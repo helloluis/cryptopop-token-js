@@ -117,7 +117,6 @@ function donate(session) {
 
 function sendMessage(session, message) {
   let controls = [
-    {type: 'button', label: 'Ping', value: 'ping'},
     {type: 'button', label: 'Toon', value: 'toon'},
     {type: 'button', label: 'Donate', value: 'donate'}
   ]
