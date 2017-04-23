@@ -67,7 +67,7 @@ function toon(session) {
     ["The Bitcoin Gingerbread Man","70_market_share.png"],
     ["Antpool Announcement","Antpool.png"],
     ["Meanwhile, at the Dept. of Awesome Innovation ...","Awesome_blockchain_innovation.png"],
-    ["Bitcoin Bulldogs"],["Bitcoin_bulldogs.png"],
+    ["Bitcoin Bulldogs","Bitcoin_bulldogs.png"],
     ["Dora's Hard Fork Survival Guide","Doras_hard_fork_survival_guide.png"],
     ["Dr. Strange and Wong","Dr._Strange_and_Wong.png"],
     ["Pennywise's Scamcoins","Pennywise.png"],
